@@ -1,8 +1,18 @@
 export function calculateScrabbleScore(word) {
     let scoreArray = [['A',1],['B',3],['C',3],['D',2],['E',1],['F',4],['G',2],['H',4],['I',1],['J',8],['K',5],['L',1],['M',3],['N',1],['O',1],['P',3],['Q',10],['R',1],['S',1],['T',1],['U',1],['V',4],['W',4],['X',8],['Y',4],['Z',10]]
     let score = 0 
+    let wordString = word //.toString()
 
+    if(typeof(word)!= 'string'){
+        throw new Error()
+    }
     for(let i=0; i<word.length; i++){
+        if(word[i].toUpperCase()<"A" || word[i].toUpperCase()>"Z"){
+  
+          throw new Error()
+         
+        }
+
         for(let j = 0; j<scoreArray.length; j++){
             if(word[i].toUpperCase() === scoreArray[j][0]){
                 score += scoreArray[j][1]

@@ -14,3 +14,8 @@ test('test if celia returns score of 7', ()=>{
     expect(actual).toBe(expected)
 })
 
+test('test showing if function throws error when input is outside A-Z in this case 3',()=>{
+    const actual = ()=>{calculateScrabbleScore(false)}
+    expect(actual).toThrow()
+})
+
